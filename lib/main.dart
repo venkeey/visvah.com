@@ -86,7 +86,28 @@ class _ComingSoonPageState extends State<ComingSoonPage>
                   color: Colors.white.withValues(alpha: 0.5),
                 ),
               ),
-              const SizedBox(height: 48),
+              const SizedBox(height: 32),
+              TextButton.icon(
+                onPressed: () => _openUrl('https://visvah.com/knu/'),
+                icon: const Text('📖', style: TextStyle(fontSize: 16)),
+                label: Text(
+                  'Tokenomics Book',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w300,
+                    letterSpacing: 2,
+                    color: Colors.white.withValues(alpha: 0.7),
+                  ),
+                ),
+                style: TextButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  side: BorderSide(color: Colors.white.withValues(alpha: 0.2)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 40),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [

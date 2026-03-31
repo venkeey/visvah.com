@@ -1,0 +1,372 @@
+/* Chart Demo Container */
+.chart-demo {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Demo Header */
+.demo-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.demo-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.demo-header p {
+  font-size: 1.125rem;
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Charts Grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Chart Section */
+.chart-section {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.chart-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+.chart-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.75rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chart-section p {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+/* Distribution Total */
+.distribution-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 0.75rem;
+  border: 2px solid transparent;
+}
+
+.distribution-total .total-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.distribution-total .total-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  min-width: 80px;
+  text-align: center;
+}
+
+.distribution-total .total-value.success {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  border: 2px solid #10b981;
+}
+
+.distribution-total .total-value.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border: 2px solid #ef4444;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Demo Footer */
+.demo-footer {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.demo-footer h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+/* Usage Tips */
+.usage-tips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.tip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.tip-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.tip-content h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.tip-content p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-demo {
+    padding: 1rem;
+  }
+  
+  .demo-header {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .demo-header h1 {
+    font-size: 2rem;
+  }
+  
+  .demo-header p {
+    font-size: 1rem;
+  }
+  
+  .charts-grid {
+    gap: 2rem;
+  }
+  
+  .chart-section {
+    padding: 1rem;
+  }
+  
+  .chart-section h2 {
+    font-size: 1.25rem;
+  }
+  
+  .usage-tips {
+    grid-template-columns: 1fr;
+  }
+  
+  .tip {
+    padding: 1rem;
+  }
+  
+  .tip-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-demo {
+    padding: 0.5rem;
+  }
+  
+  .demo-header {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  
+  .demo-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .charts-grid {
+    gap: 1.5rem;
+  }
+  
+  .chart-section {
+    padding: 0.75rem;
+    border-radius: 1rem;
+  }
+  
+  .distribution-total {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .chart-demo {
+    background-color: #111827;
+    color: #f9fafb;
+  }
+  
+  .demo-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+  }
+  
+  .chart-section {
+    background: #1f2937;
+    border-color: #374151;
+    color: #f9fafb;
+  }
+  
+  .chart-section h2 {
+    color: #f9fafb;
+  }
+  
+  .chart-section p {
+    color: #d1d5db;
+  }
+  
+  .distribution-total {
+    background: #374151;
+  }
+  
+  .distribution-total .total-label {
+    color: #d1d5db;
+  }
+  
+  .demo-footer {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+  }
+  
+  .demo-footer h3 {
+    color: #f9fafb;
+  }
+  
+  .tip {
+    background: #1f2937;
+  }
+  
+  .tip-content h4 {
+    color: #f9fafb;
+  }
+  
+  .tip-content p {
+    color: #d1d5db;
+  }
+}
+
+/* Animation Enhancements */
+.chart-section {
+  animation: slideUp 0.6s ease-out;
+}
+
+.chart-section:nth-child(1) { animation-delay: 0.1s; }
+.chart-section:nth-child(2) { animation-delay: 0.2s; }
+.chart-section:nth-child(3) { animation-delay: 0.3s; }
+.chart-section:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Effects */
+.chart-section:hover {
+  border-color: #3b82f6;
+}
+
+.chart-section:hover h2 {
+  color: #3b82f6;
+}
+
+/* Focus States for Accessibility */
+.chart-section:focus-within {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .chart-demo {
+    padding: 0;
+  }
+  
+  .demo-header,
+  .demo-footer {
+    display: none;
+  }
+  
+  .chart-section {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}
+
+
+

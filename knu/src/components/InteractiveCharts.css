@@ -1,0 +1,466 @@
+/* Interactive Charts Container */
+.tokenomics-chart {
+  position: relative;
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.tokenomics-chart:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+/* Supply vs Demand Chart */
+.supply-demand-chart {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.equilibrium-info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.equilibrium-point {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.equilibrium-point .label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.equilibrium-point .value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Economic Model Chart */
+.economic-model-chart {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.model-selector {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.model-selector h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  text-align: center;
+}
+
+.model-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.model-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background: #f3f4f6;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.model-toggle:hover {
+  background: #e5e7eb;
+}
+
+.model-toggle input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: #f59e0b;
+  cursor: pointer;
+}
+
+.toggle-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Network Effect Chart */
+.network-effect-chart {
+  background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Token Distribution Chart */
+.token-distribution-chart {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Chart Controls */
+.chart-controls {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+}
+
+.chart-controls h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.control-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.control-label::before {
+  content: '⚙️';
+  font-size: 1rem;
+}
+
+/* Range Slider Controls */
+.control-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.control-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.control-range::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.control-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Select Controls */
+.control-select {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.control-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.control-select:hover {
+  border-color: #9ca3af;
+}
+
+/* Number Input Controls */
+.control-number {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.control-number:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.control-number:hover {
+  border-color: #9ca3af;
+}
+
+/* Control Value Display */
+.control-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #3b82f6;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 0.375rem;
+  min-width: 60px;
+}
+
+/* Chart Container Enhancements */
+.tokenomics-chart canvas {
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.tokenomics-chart:hover canvas {
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .supply-demand-chart,
+  .economic-model-chart,
+  .network-effect-chart,
+  .token-distribution-chart {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  
+  .equilibrium-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .controls-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .model-toggles {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .model-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .tokenomics-chart {
+    padding: 1rem;
+  }
+  
+  .chart-controls {
+    padding: 1rem;
+  }
+  
+  .equilibrium-point .value {
+    font-size: 1.25rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .tokenomics-chart {
+    background: #1f2937;
+    border-color: #374151;
+    color: #f9fafb;
+  }
+  
+  .supply-demand-chart {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+  }
+  
+  .economic-model-chart {
+    background: linear-gradient(135deg, #451a03 0%, #78350f 100%);
+  }
+  
+  .network-effect-chart {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  }
+  
+  .token-distribution-chart {
+    background: linear-gradient(135deg, #581c87 0%, #7c3aed 100%);
+  }
+  
+  .model-selector,
+  .chart-controls {
+    background: #374151;
+    color: #f9fafb;
+  }
+  
+  .model-selector h4,
+  .chart-controls h4 {
+    color: #f9fafb;
+    border-bottom-color: #4b5563;
+  }
+  
+  .model-toggle {
+    background: #4b5563;
+    color: #f9fafb;
+  }
+  
+  .model-toggle:hover {
+    background: #6b7280;
+  }
+  
+  .toggle-label {
+    color: #f9fafb;
+  }
+  
+  .control-label {
+    color: #d1d5db;
+  }
+  
+  .control-select,
+  .control-number {
+    background: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+  }
+  
+  .control-select:focus,
+  .control-number:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+  }
+  
+  .control-value {
+    background: rgba(96, 165, 250, 0.2);
+    color: #60a5fa;
+  }
+  
+  .equilibrium-point .label {
+    color: #9ca3af;
+  }
+  
+  .equilibrium-point .value {
+    color: #60a5fa;
+  }
+}
+
+/* Animation Enhancements */
+@keyframes chartFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tokenomics-chart {
+  animation: chartFadeIn 0.6s ease-out;
+}
+
+/* Hover Effects for Interactive Elements */
+.control-range:hover::-webkit-slider-thumb {
+  box-shadow: 0 8px 15px -3px rgba(59, 130, 246, 0.3);
+}
+
+.control-select:hover,
+.control-number:hover {
+  border-color: #60a5fa;
+}
+
+/* Focus States for Accessibility */
+.control-range:focus,
+.control-select:focus,
+.control-number:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Loading States */
+.tokenomics-chart.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.tokenomics-chart.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
