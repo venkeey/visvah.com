@@ -1,0 +1,30 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 80px; /* Space for fixed navigation */
+  transition: background-color 0.3s ease;
+}
+
+/* Dark mode styles */
+body.dark-mode .App {
+  background-color: #0f1419;
+}
+
+body.dark-mode .main-content {
+  background-color: #0f1419;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 60px;
+  }
+}
+
+

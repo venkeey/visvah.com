@@ -1,0 +1,374 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #1a202c;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Dark Mode Styles - High Specificity */
+html.dark-mode,
+html.dark-mode body,
+body.dark-mode {
+  background-color: #0f1419 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode h4,
+html.dark-mode h5,
+html.dark-mode h6,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #f7fafc !important;
+}
+
+html.dark-mode p,
+body.dark-mode p {
+  color: #e2e8f0 !important;
+}
+
+html.dark-mode a,
+body.dark-mode a {
+  color: #90cdf4 !important;
+}
+
+html.dark-mode a:hover,
+body.dark-mode a:hover {
+  color: #63b3ed !important;
+}
+
+html.dark-mode code,
+body.dark-mode code {
+  background-color: #2d3748 !important;
+  color: #e2e8f0 !important;
+  border: 1px solid #4a5568 !important;
+}
+
+html.dark-mode pre,
+body.dark-mode pre {
+  background-color: #2d3748 !important;
+  border: 1px solid #4a5568 !important;
+}
+
+html.dark-mode blockquote,
+body.dark-mode blockquote {
+  border-left: 4px solid #4a5568 !important;
+  background-color: #2d3748 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark-mode hr,
+body.dark-mode hr {
+  border-color: #4a5568 !important;
+}
+
+html.dark-mode table,
+body.dark-mode table {
+  border-color: #4a5568 !important;
+}
+
+html.dark-mode th,
+html.dark-mode td,
+body.dark-mode th,
+body.dark-mode td {
+  border-color: #4a5568 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark-mode th,
+body.dark-mode th {
+  background-color: #2d3748 !important;
+}
+
+html.dark-mode tr:nth-child(even),
+body.dark-mode tr:nth-child(even) {
+  background-color: #2d3748 !important;
+}
+
+/* Dark Mode Scrollbar */
+html.dark-mode ::-webkit-scrollbar-track,
+body.dark-mode ::-webkit-scrollbar-track {
+  background: rgba(45, 55, 72, 0.3) !important;
+}
+
+html.dark-mode ::-webkit-scrollbar-thumb,
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: rgba(160, 174, 192, 0.5) !important;
+}
+
+html.dark-mode ::-webkit-scrollbar-thumb:hover,
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 174, 192, 0.7) !important;
+}
+
+/* Dark Mode Selection */
+html.dark-mode ::selection,
+body.dark-mode ::selection {
+  background: rgba(102, 126, 234, 0.3) !important;
+  color: #f7fafc !important;
+}
+
+/* Dark Mode for specific elements */
+html.dark-mode .tooltip,
+body.dark-mode .tooltip {
+  color: #90cdf4 !important;
+  border-bottom: 1px dotted #90cdf4 !important;
+}
+
+html.dark-mode .tooltip:hover,
+body.dark-mode .tooltip:hover {
+  color: #63b3ed !important;
+}
+
+html.dark-mode button,
+body.dark-mode button {
+  background-color: #2d3748 !important;
+  color: #e2e8f0 !important;
+  border-color: #4a5568 !important;
+}
+
+html.dark-mode input,
+html.dark-mode textarea,
+html.dark-mode select,
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #2d3748 !important;
+  color: #e2e8f0 !important;
+  border-color: #4a5568 !important;
+}
+
+html.dark-mode .card,
+html.dark-mode .panel,
+body.dark-mode .card,
+body.dark-mode .panel {
+  background-color: #1a202c !important;
+  border-color: #4a5568 !important;
+}
+
+html.dark-mode pre,
+body.dark-mode pre {
+  background-color: #2d3748 !important;
+  border: 1px solid #4a5568 !important;
+}
+
+html.dark-mode blockquote,
+body.dark-mode blockquote {
+  border-left: 4px solid #4a5568 !important;
+  background-color: #2d3748 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark-mode hr,
+body.dark-mode hr {
+  border-color: #4a5568 !important;
+}
+
+html.dark-mode table,
+body.dark-mode table {
+  border-color: #4a5568 !important;
+}
+
+html.dark-mode th,
+html.dark-mode td,
+body.dark-mode th,
+body.dark-mode td {
+  border-color: #4a5568 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark-mode th,
+body.dark-mode th {
+  background-color: #2d3748 !important;
+}
+
+html.dark-mode tr:nth-child(even),
+body.dark-mode tr:nth-child(even) {
+  background-color: #2d3748 !important;
+}
+
+/* Dark Mode Scrollbar */
+html.dark-mode ::-webkit-scrollbar-track,
+body.dark-mode ::-webkit-scrollbar-track {
+  background: rgba(45, 55, 72, 0.3) !important;
+}
+
+html.dark-mode ::-webkit-scrollbar-thumb,
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: rgba(160, 174, 192, 0.5) !important;
+}
+
+html.dark-mode ::-webkit-scrollbar-thumb:hover,
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 174, 192, 0.7) !important;
+}
+
+/* Dark Mode Selection */
+html.dark-mode ::selection,
+body.dark-mode ::selection {
+  background: rgba(102, 126, 234, 0.3) !important;
+  color: #f7fafc !important;
+}
+
+/* Dark Mode for specific elements */
+html.dark-mode .tooltip,
+body.dark-mode .tooltip {
+  color: #90cdf4 !important;
+  border-bottom: 1px dotted #90cdf4 !important;
+}
+
+html.dark-mode .tooltip:hover,
+body.dark-mode .tooltip:hover {
+  color: #63b3ed !important;
+}
+
+html.dark-mode button,
+body.dark-mode button {
+  background-color: #2d3748 !important;
+  color: #e2e8f0 !important;
+  border-color: #4a5568 !important;
+}
+
+html.dark-mode input,
+html.dark-mode textarea,
+html.dark-mode select,
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #2d3748 !important;
+  color: #e2e8f0 !important;
+  border-color: #4a5568 !important;
+}
+
+html.dark-mode .card,
+html.dark-mode .panel,
+body.dark-mode .card,
+body.dark-mode .panel {
+  background-color: #1a202c !important;
+  border-color: #4a5568 !important;
+}
+
+html.dark-mode pre,
+body.dark-mode pre {
+  background-color: #2d3748 !important;
+  border: 1px solid #4a5568 !important;
+}
+
+html.dark-mode blockquote,
+body.dark-mode blockquote {
+  border-left: 4px solid #4a5568 !important;
+  background-color: #2d3748 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark-mode hr,
+body.dark-mode hr {
+  border-color: #4a5568 !important;
+}
+
+html.dark-mode table,
+body.dark-mode table {
+  border-color: #4a5568 !important;
+}
+
+html.dark-mode th,
+html.dark-mode td,
+body.dark-mode th,
+body.dark-mode td {
+  border-color: #4a5568 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark-mode th,
+body.dark-mode th {
+  background-color: #2d3748 !important;
+}
+
+html.dark-mode tr:nth-child(even),
+body.dark-mode tr:nth-child(even) {
+  background-color: #2d3748 !important;
+}
+
+/* Dark Mode Scrollbar */
+html.dark-mode ::-webkit-scrollbar-track,
+body.dark-mode ::-webkit-scrollbar-track {
+  background: rgba(45, 55, 72, 0.3) !important;
+}
+
+html.dark-mode ::-webkit-scrollbar-thumb,
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: rgba(160, 174, 192, 0.5) !important;
+}
+
+html.dark-mode ::-webkit-scrollbar-thumb:hover,
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 174, 192, 0.7) !important;
+}
+
+/* Dark Mode Selection */
+html.dark-mode ::selection,
+body.dark-mode ::selection {
+  background: rgba(102, 126, 234, 0.3) !important;
+  color: #f7fafc !important;
+}
+
+/* Dark Mode for specific elements */
+html.dark-mode .tooltip,
+body.dark-mode .tooltip {
+  color: #90cdf4 !important;
+  border-bottom: 1px dotted #90cdf4 !important;
+}
+
+html.dark-mode .tooltip:hover,
+body.dark-mode .tooltip:hover {
+  color: #63b3ed !important;
+}
+
+html.dark-mode button,
+body.dark-mode button {
+  background-color: #2d3748 !important;
+  color: #e2e8f0 !important;
+  border-color: #4a5568 !important;
+}
+
+html.dark-mode input,
+html.dark-mode textarea,
+html.dark-mode select,
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #2d3748 !important;
+  color: #e2e8f0 !important;
+  border-color: #4a5568 !important;
+}
+
+html.dark-mode .card,
+html.dark-mode .panel,
+body.dark-mode .card,
+body.dark-mode .panel {
+  background-color: #1a202c !important;
+  border-color: #4a5568 !important;
+}
+

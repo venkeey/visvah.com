@@ -1,16 +1,64 @@
-# vis_web
+# visweb — Vis Web Monorepo
 
-A new Flutter project.
+All web projects for [visvah.com](https://visvah.com) live here.
 
-## Getting Started
+## Structure
 
-This project is a starting point for a Flutter application.
+```
+visweb/
+├── lib/          ← Flutter landing page  (visvah.com/)
+├── web/
+├── pubspec.yaml
+└── knu/          ← React Tokenomics Book (visvah.com/knu/)
+    ├── src/
+    ├── public/
+    └── package.json
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Server Info
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+| | Value |
+|---|---|
+| Host | `visvah.com` |
+| SSH user | `developer` |
+| Landing root | `/var/www/visvah/` |
+| Book root | `/var/www/visknu/` |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## Landing Page (Flutter)
+
+### Dev
+```bash
+flutter run -d chrome
+```
+
+### Deploy
+```bash
+flutter build web --release
+scp -r build/web/* developer@visvah.com:/var/www/visvah/
+```
+
+---
+
+## Tokenomics Book (React — `knu/`)
+
+### Dev
+```bash
+cd knu
+npm install
+npm start
+```
+
+### Deploy
+```bash
+cd knu
+npm run build
+scp -r build/* developer@visvah.com:/var/www/visknu/
+```
+
+> SSH key required. In WSL:
+> ```bash
+> cp /mnt/c/Users/Lenovo/.ssh/id_ed25519 /tmp/visvah_key && chmod 600 /tmp/visvah_key
+> scp -i /tmp/visvah_key -r knu/build/* developer@visvah.com:/var/www/visknu/
+> ```

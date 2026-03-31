@@ -43,3 +43,11 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# React (knu/)
+knu/node_modules/
+knu/build/
+knu/.env.local
+knu/.env.development.local
+knu/.env.test.local
+knu/.env.production.local
