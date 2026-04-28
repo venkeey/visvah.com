@@ -10,7 +10,7 @@ import 'package:web/web.dart' as web;
 /// Endpoint that validates the license key and returns a signed download URL.
 /// See `docs/guides/screen_map/backend_entitlement_server.md` in the visvah
 /// repo for the request/response contract.
-const String _entitlementBaseUrl = 'https://visvah.com';
+const String _adminBaseUrl = 'https://visvah.com';
 
 void main() {
   runApp(const VisApp());
@@ -89,7 +89,7 @@ class _ComingSoonPageState extends State<ComingSoonPage>
 
     try {
       final response = await http.post(
-        Uri.parse('$_entitlementBaseUrl/api/license-key/issue-download-token'),
+        Uri.parse('$_adminBaseUrl/api/license-key/issue-download-token'),
         headers: const {'Content-Type': 'application/json'},
         body: jsonEncode({'license_key': key, 'platform': 'windows'}),
       );
