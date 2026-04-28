@@ -19,10 +19,11 @@ visweb/
 
 | | Value |
 |---|---|
-| Host | `visvah.com` |
+| Host | `visvah.com` (resolves to `51.15.247.9` — the entitlement/admin box) |
 | SSH user | `developer` |
 | Landing root | `/var/www/visvah/` |
 | Book root | `/var/www/visknu/` |
+| Note | Deploys can also target the IP directly (`developer@51.15.247.9:`) — useful pre-DNS-flip or for staging changes by IP. |
 
 ---
 
